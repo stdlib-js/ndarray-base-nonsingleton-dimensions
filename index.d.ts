@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2020 The Stdlib Authors.
@@ -16,35 +16,33 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 2.0
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ArrayLike } from '@stdlib/types/array';
 
 /**
-* Return the number of non-nonsingleton dimensions.
+* Returns the number of non-singleton dimensions.
 *
-* @module @stdlib/ndarray-base-nonsingleton-dimensions
+* ## Notes
 *
-* @example
-* var nonsingletonDimensions = require( '@stdlib/ndarray-base-nonsingleton-dimensions' );
+* -   A singleton dimension is a dimension whose size is equal to `1`.
 *
-* var shape = [ 2, 2, 1 ];
-*
-* var n = nonsingletonDimensions( shape );
-* // returns 2
+* @param shape - array shape
+* @returns number of non-singleton dimensions
 *
 * @example
-* var nonsingletonDimensions = require( '@stdlib/ndarray-base-nonsingleton-dimensions' );
+* var n = nonsingletonDimensions( [ 3, 3, 1, 2 ] );
+* // returns 3
 *
-* var shape = [ 1, 1, 1 ];
-*
-* var n = nonsingletonDimensions( shape );
+* @example
+* var n = nonsingletonDimensions( [ 1, 1 ] );
 * // returns 0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function nonsingletonDimensions( shape: ArrayLike<number> ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = nonsingletonDimensions;
